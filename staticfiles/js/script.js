@@ -107,6 +107,23 @@ $(function() {
 })
 
 
+// let phoneInp = document.querySelector(".phoneNumber")
+
+// console.log(phoneInp)
+
+
+// function isValid(p) {
+//     var digits = p.replace(/\D/g, "");
+//     return phoneRe.test(digits);
+// }
+
+// phoneInp.addEventListener('input' , function() {
+//     var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+//     console.log(phoneRe.test(this.value))
+// })
+
+
+
 // var my_button = document.getElementById("my_button");
 // console.log(my_button);
 // my_button.addEventListener("click", function () {
