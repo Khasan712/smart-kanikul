@@ -482,10 +482,10 @@
                             <button id="my_button" class="bgBlue">Ro'yhatdan o'tish</button>
                         </form> -->
 
-                        <form name="myForm" onsubmit="return validateForm()">
+                        <form name="myForm" onsubmit="return validateForm()" method="post">{% csrf_token %}
                             <input type="text" id="name" name="name" placeholder="Ismingzini kiriting" required>
-                            <input class="phoneNumber" type="tel" id="phone" maxlength="9" name="phone"
-                              data-error="Please enter a requested format - ex. 888 888-8888" value=""
+                            <input class="phoneNumber" type="tel" id="phone" maxlength="12" name="phone"
+                              data-error="Please enter a requested format - ex. 888 888-8888" value="998"
                               placeholder=" 91 101 01 00" />
                             <button id="my_button" class="bgBlue">Ro'yhatdan o'tish</button>
                             <!-- <input type="text" id="name" name="name" placeholder="ISM SHARIFLARI NIMA EDI?" /> -->

@@ -107,73 +107,90 @@ $(function() {
 })
 
 
-var my_button = document.getElementById("my_button");
-console.log(my_button);
-my_button.addEventListener("click", function () {
-function validateForm() {
-  var name = document.forms["myForm"]["name"].value;
-  var phone = document.forms["myForm"]["phone"].value;
-  var phoneRegex = /^\d{9}$/;
-  if (name == "" || phone == "") {
-    alert("Ism va telefon raqami to'ldirilishi kerak");
-    return false;
-  }
-  if (!phone.match(phoneRegex)) {
-    alert("Telefon raqami 12 ta raqamdan iborat bo'lishi kerak");
-    return false;
-  }
-}
-validateForm();
-var name = document.getElementById("name").value;
-var phone = document.getElementById("phone").value;
-console.log("Name: " + name);
-console.log("Phone: " + phone);
-var data = {
-  first_name: name,
-  phone_number: "+998" + phone,
-};
+// let phoneInp = document.querySelector(".phoneNumber")
 
-fetch("http://backend.notiqlik-markazi.uz/api/v1/register/", {
-  method: "POST",
-  body: JSON.stringify(data),
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json))
-  .finally(() => {
-    document.getElementById("phone").value = "";
-    document.getElementById("name").value = "";
-  });
-});
-var phoneInput = document.getElementById("phone");
-phoneInput.addEventListener("input", function (event) {
-var currentValue = event.target.value;
-var formattedValue = currentValue.replace(/\D/g, "");
-event.target.value = formattedValue;
-});
+// console.log(phoneInp)
 
-// register users ☝️
-let input = document.querySelector("#phone");
-console.log(input);
-let iti = intlTelInput(input);
-intlTelInputGlobals.loadUtils(
-"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.1/js/utils.js"
-);
 
-intlTelInput(input, {
-initialCountry: "uz",
-separateDialCode: true,
-nationalMode: false,
-onlyCountries: ["uz"],
-});
-let countryData = window.intlTelInputGlobals.getCountryData();
-// console.log(countryData);
-$("#phone").focusout(function (e, countryData) {
-let phone_number = $("#phone").val();
-phone_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-// console.log(phone_number);
-});
+// function isValid(p) {
+//     var digits = p.replace(/\D/g, "");
+//     return phoneRe.test(digits);
+// }
+
+// phoneInp.addEventListener('input' , function() {
+//     var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+//     console.log(phoneRe.test(this.value))
+// })
+
+
+
+// var my_button = document.getElementById("my_button");
+// console.log(my_button);
+// my_button.addEventListener("click", function () {
+// function validateForm() {
+//   var name = document.forms["myForm"]["name"].value;
+//   var phone = document.forms["myForm"]["phone"].value;
+//   var phoneRegex = /^\d{9}$/;
+//   if (name == "" || phone == "") {
+//     alert("Ism va telefon raqami to'ldirilishi kerak");
+//     return false;
+//   }
+//   if (!phone.match(phoneRegex)) {
+//     alert("Telefon raqami 12 ta raqamdan iborat bo'lishi kerak");
+//     return false;
+//   }
+// }
+// validateForm();
+// var name = document.getElementById("name").value;
+// var phone = document.getElementById("phone").value;
+// console.log("Name: " + name);
+// console.log("Phone: " + phone);
+// var data = {
+//   first_name: name,
+//   phone_number: "+998" + phone,
+// };
+
+// fetch("http://backend.notiqlik-markazi.uz/api/v1/register/", {
+//   method: "POST",
+//   body: JSON.stringify(data),
+//   headers: {
+//     Accept: "application/json",
+//     "Content-Type": "application/json",
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .finally(() => {
+//     document.getElementById("phone").value = "";
+//     document.getElementById("name").value = "";
+//   });
+// });
+// var phoneInput = document.getElementById("phone");
+// phoneInput.addEventListener("input", function (event) {
+// var currentValue = event.target.value;
+// var formattedValue = currentValue.replace(/\D/g, "");
+// event.target.value = formattedValue;
+// });
+
+// // register users ☝️
+// let input = document.querySelector("#phone");
+// console.log(input);
+// let iti = intlTelInput(input);
+// intlTelInputGlobals.loadUtils(
+// "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.1/js/utils.js"
+// );
+
+// intlTelInput(input, {
+// initialCountry: "uz",
+// separateDialCode: true,
+// nationalMode: false,
+// onlyCountries: ["uz"],
+// });
+// let countryData = window.intlTelInputGlobals.getCountryData();
+// // console.log(countryData);
+// $("#phone").focusout(function (e, countryData) {
+// let phone_number = $("#phone").val();
+// phone_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+// // console.log(phone_number);
+// });
 
