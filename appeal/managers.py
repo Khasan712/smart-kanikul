@@ -17,8 +17,8 @@ class UserManager(BaseUserManager):
             name=name,
             **extra_fields
         )
-        # user.password = make_password(password)
-        user.password = signer.sign(password)
+        user.password = make_password(password)
+        # user.password = signer.sign(password)
         user.save(using=self._db)
         return user
 
