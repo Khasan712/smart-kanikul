@@ -484,9 +484,10 @@
 
                         <form name="myForm" onsubmit="return validateForm()" method="post">{% csrf_token %}
                             <input type="text" id="name" name="name" placeholder="Ismingzini kiriting" required>
-                            <input class="phoneNumber" type="tel" id="phone" maxlength="12" name="phone"
-                              data-error="Please enter a requested format - ex. 888 888-8888" value="998"
-                              placeholder=" 91 101 01 00" />
+                            <input 
+                                {% comment %} pattern="/^\+?998?\s?-?(90|91|93|94|95|98|99|33|97|71|78|88)\s?-?(\d{3})\s?-?(\d{2})\s?-?(\d{2})$/"  {% endcomment %}
+                                class="phoneNumber" type="text" id="phone" name="phone"
+                                placeholder=" +998 91 101 01 00" />
                             <button id="my_button" class="bgBlue">Ro'yhatdan o'tish</button>
                             <!-- <input type="text" id="name" name="name" placeholder="ISM SHARIFLARI NIMA EDI?" /> -->
                           </form>
