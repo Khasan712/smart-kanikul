@@ -728,6 +728,7 @@ svg {
   overflow: hidden;
   border: none;
   color: white;
+  display: block;
 }
 
 .bgBlue span {

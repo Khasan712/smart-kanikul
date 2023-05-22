@@ -51,19 +51,19 @@
                     <div class="col-auto navbar">
                         <ul>
                             <li>
-                                <a href="#learn">Kurs haqida</a>
+                                <a class="link-nav" href="#learn">Kurs haqida</a>
                             </li>
                             <li>
-                                <a href="#mentors">Mentorlarimiz</a>
+                                <a class="link-nav" href="#mentors">Mentorlarimiz</a>
                             </li>
                             <li>
-                                <a href="#benifits">Kurs afzalliklari</a>
+                                <a class="link-nav" href="#benifits">Kurs afzalliklari</a>
                             </li>
                             <li>
-                                <a href="#price">Kurs narxlari</a>
+                                <a class="link-nav" href="#price">Kurs narxlari</a>
                             </li>
-                            <li class="bgBlue">
-                                <a class="call" href="tel:+998712038800">
+                            <li class=" ">
+                                <a class="call bgBlue" href="tel:998712038800">
                                     <i class="fa fa-phone"></i> 99871 203-88-00
                                 </a>
                             </li>
@@ -476,11 +476,20 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <h3 class="title">&lt;Smart-kanikul kursiga ro'yhatdan o'tish/&gt;</h3>
-                        <form action="" method="post">{% csrf_token %}
+                        <!-- <form action="" method="post">{% csrf_token %}
                             <input type="text" name="name" placeholder="Ismingzini kiriting" required>
                             <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required>
-                            <button class="bgBlue">Ro'yhatdan o'tish</button>
-                        </form>
+                            <button id="my_button" class="bgBlue">Ro'yhatdan o'tish</button>
+                        </form> -->
+
+                        <form name="myForm" onsubmit="return validateForm()">
+                            <input type="text" id="name" name="name" placeholder="Ismingzini kiriting" required>
+                            <input class="phoneNumber" type="tel" id="phone" maxlength="9" name="phone"
+                              data-error="Please enter a requested format - ex. 888 888-8888" value=""
+                              placeholder=" 91 101 01 00" />
+                            <button id="my_button" class="bgBlue">Ro'yhatdan o'tish</button>
+                            <!-- <input type="text" id="name" name="name" placeholder="ISM SHARIFLARI NIMA EDI?" /> -->
+                          </form>
                     </div>
                 </div>
             </div>
@@ -495,24 +504,27 @@
                     <div class="col-auto">
                         <ul>
                             <li>
-                                <a href="#!"><i class="fa-brands fa-telegram"></i></a>
+                                <a href="https://t.me/fintechhub_admin1"><i class="fa-brands fa-telegram"></i></a>
                             </li>
                             <li>
-                                <a href="#!"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/fintechhubuz/"><i class="fa-brands fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="#!"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/fintechhubuz"><i class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/fintechhubuz"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>  
         </nav>
     </footer>
 
 
 
-
+    <script src="{% static 'Libs/js/intlTelInput.js' %}"></script>
     <script src="{% static 'Libs/js/jquery.js' %}"></script>
     <script src="{% static 'Libs/js/owl.carousel.min.js' %}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+import os
+
+admin_panel_url = os.getenv("ADMIN_PANEL_URL")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(f'{admin_panel_url}/', admin.site.urls),
     path('', include('appeal.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
     +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

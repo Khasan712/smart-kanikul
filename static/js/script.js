@@ -59,6 +59,9 @@ $(function() {
     
     $(window).scroll(function () {
         var scrollTop = $(this).scrollTop()
+        if(scrollTop < 200){
+            $('header ul a').css('color' , 'white')
+        }
          if (scrollTop >= 500) {
             $('.scrollTop').fadeIn()
             $('.scrollTop').css({ display: 'flex' })
@@ -68,7 +71,7 @@ $(function() {
     
         $('header ul a').each(function () {
             var id = $(this).attr('href')
-            var href = $(id).offset().top - 120
+            var href = $(id)?.offset()?.top - 120
             if (scrollTop >= href) {
                 $('header ul a').css('color', 'white')
                 $(this).css('color', '#30a8ff')
@@ -90,7 +93,7 @@ $(function() {
     })
     
     
-    $('header ul a').click(function (e) {
+    $('header ul .link-nav').click(function (e) {
         e.preventDefault()
         $('header ul a').css('color', '#fff')
         var attr = $(this).css('color', '#30a8ff').attr('href')
@@ -101,6 +104,76 @@ $(function() {
         }, 1000)
     
     })
-    
-    
 })
+
+
+var my_button = document.getElementById("my_button");
+console.log(my_button);
+my_button.addEventListener("click", function () {
+function validateForm() {
+  var name = document.forms["myForm"]["name"].value;
+  var phone = document.forms["myForm"]["phone"].value;
+  var phoneRegex = /^\d{9}$/;
+  if (name == "" || phone == "") {
+    alert("Ism va telefon raqami to'ldirilishi kerak");
+    return false;
+  }
+  if (!phone.match(phoneRegex)) {
+    alert("Telefon raqami 12 ta raqamdan iborat bo'lishi kerak");
+    return false;
+  }
+}
+validateForm();
+var name = document.getElementById("name").value;
+var phone = document.getElementById("phone").value;
+console.log("Name: " + name);
+console.log("Phone: " + phone);
+var data = {
+  first_name: name,
+  phone_number: "+998" + phone,
+};
+
+fetch("http://backend.notiqlik-markazi.uz/api/v1/register/", {
+  method: "POST",
+  body: JSON.stringify(data),
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .finally(() => {
+    document.getElementById("phone").value = "";
+    document.getElementById("name").value = "";
+  });
+});
+var phoneInput = document.getElementById("phone");
+phoneInput.addEventListener("input", function (event) {
+var currentValue = event.target.value;
+var formattedValue = currentValue.replace(/\D/g, "");
+event.target.value = formattedValue;
+});
+
+// register users ☝️
+let input = document.querySelector("#phone");
+console.log(input);
+let iti = intlTelInput(input);
+intlTelInputGlobals.loadUtils(
+"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.1/js/utils.js"
+);
+
+intlTelInput(input, {
+initialCountry: "uz",
+separateDialCode: true,
+nationalMode: false,
+onlyCountries: ["uz"],
+});
+let countryData = window.intlTelInputGlobals.getCountryData();
+// console.log(countryData);
+$("#phone").focusout(function (e, countryData) {
+let phone_number = $("#phone").val();
+phone_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+// console.log(phone_number);
+});
+

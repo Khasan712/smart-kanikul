@@ -153,16 +153,9 @@ AUTH_USER_MODEL = 'appeal.User'
 
 
 # CORS
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-]
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(' ')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",
-]
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
 CORS_ALLOW_METHODS = (
     "GET",
