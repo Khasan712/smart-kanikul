@@ -1,15 +1,14 @@
-$(function() {
-    $("header .owl-carousel").owlCarousel(
-        {
-            items: 1,
-            autoplay: true,
-            nav: false,
-            dots: true,
-            loop: true,
-            smartSpeed: 1000
-        }
-    );
-    
+$(document).ready(function () {
+  $(function () {
+    $("header .owl-carousel").owlCarousel({
+      items: 1,
+      autoplay: true,
+      nav: false,
+      dots: true,
+      loop: true,
+      smartSpeed: 1000,
+    });
+
     // $('header .call').click(function () {
     //     $('.modal').fadeIn()
     //     $('.modal').css('display' , 'flex')
@@ -17,100 +16,131 @@ $(function() {
     // $('.modal .close').click(function () {
     //     $('.modal').fadeOut()
     // })
-    
-    $('.mentors .owl-carousel').owlCarousel(
-        {
-            items: 1,
-            autoplay: true,
-            nav: false,
-            dots: true,
-            loop: true,
-            smartSpeed: 1000,
-            margin: 30,
-    
-            responsive: {
-                // breakpoint from 0 up
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 2
-                },
-                767: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        }
-    );
-    
+
+    $("#my-form").submit(function (e) {
+      e.preventDefault();
+      $(".modal").fadeIn();
+      $(".modal").css("display", "flex");
+
+      var name = $("#name").val();
+      var phone = $("#phone").val();
+      $.ajax({
+        url: "/",
+        data: { name, phone , 'csrfmiddlewaretoken': $('meta[name="csrf-token"]').attr('content') },
+        type : 'POST' ,
+
+      });
+    });
+
+    $(".mentors .owl-carousel").owlCarousel({
+      items: 1,
+      autoplay: true,
+      nav: false,
+      dots: true,
+      loop: true,
+      smartSpeed: 1000,
+      margin: 30,
+
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 1,
+        },
+        480: {
+          items: 2,
+        },
+        767: {
+          items: 3,
+        },
+        1000: {
+          items: 4,
+        },
+      },
+    });
+
     AOS.init();
-    
-    
+
     $(function () {
-        $('.bars').click(function () {
-            $('.navbar').toggleClass('active');
-            $('.bars .fa-bars').toggleClass('fa-xmark');
-        });
-    })
-    
-    
+      $(".bars").click(function () {
+        $(".navbar").toggleClass("active");
+        $(".bars .fa-bars").toggleClass("fa-xmark");
+      });
+    });
+
     $(window).scroll(function () {
-        var scrollTop = $(this).scrollTop()
-        if(scrollTop < 200){
-            $('header ul a').css('color' , 'white')
+      var scrollTop = $(this).scrollTop();
+      if (scrollTop < 200) {
+        $("header ul a").css("color", "white");
+      }
+      if (scrollTop >= 500) {
+        $(".scrollTop").fadeIn();
+        $(".scrollTop").css({ display: "flex" });
+        $('.callPhone').fadeIn()
+        $('.callPhone').css({display : 'flex'})
+      } else {
+        $(".scrollTop").fadeOut();
+        $('.callPhone').fadeOut()
+      }
+
+      $("header ul a").each(function () {
+        var id = $(this).attr("href");
+        var href = $(id)?.offset()?.top - 120;
+        if (scrollTop >= href) {
+          $("header ul a").css("color", "white");
+          $(this).css("color", "#30a8ff");
         }
-         if (scrollTop >= 500) {
-            $('.scrollTop').fadeIn()
-            $('.scrollTop').css({ display: 'flex' })
-        } else {
-            $('.scrollTop').fadeOut()
-        }
-    
-        $('header ul a').each(function () {
-            var id = $(this).attr('href')
-            var href = $(id)?.offset()?.top - 120
-            if (scrollTop >= href) {
-                $('header ul a').css('color', 'white')
-                $(this).css('color', '#30a8ff')
-            }
-        })
-    })
-    
-    $('.scrollTop').click(function () {
-        $('html , body').animate({
-            scrollTop: 0
-        }, 1000)
-    })
-    
-    $('.registerBtn').click(function () {
-        var res = $('#register').offset().top
-        $('html , body').animate({
-            scrollTop: res
-        }, 1000)
-    })
-    
-    
-    $('header ul .link-nav').click(function (e) {
-        e.preventDefault()
-        $('header ul a').css('color', '#fff')
-        var attr = $(this).css('color', '#30a8ff').attr('href')
-        var offset = $(attr).offset().top - 70
-    
-        $('html , body').animate({
-            scrollTop: offset
-        }, 1000)
-    
-    })
-})
+      });
 
 
+
+    });
+
+    $(".scrollTop").click(function () {
+      $("html , body").animate(
+        {
+          scrollTop: 0,
+        },
+        1000
+      );
+    });
+
+
+  $('.callPhone').click(function () {
+      $('html , body').animate({
+        scrollTop2: 0
+      }, 1000)
+  })
+
+
+  
+    $(".registerBtn").click(function () {
+      var res = $("#register").offset().top;
+      $("html , body").animate(
+        {
+          scrollTop: res,
+        },
+        1000
+      );
+    });
+
+    $("header ul .link-nav").click(function (e) {
+      e.preventDefault();
+      $("header ul a").css("color", "#fff");
+      var attr = $(this).css("color", "#30a8ff").attr("href");
+      var offset = $(attr).offset().top - 70;
+
+      $("html , body").animate(
+        {
+          scrollTop: offset,
+        },
+        1000
+      );
+    });
+  });
+});
 // let phoneInp = document.querySelector(".phoneNumber")
 
 // console.log(phoneInp)
-
 
 // function isValid(p) {
 //     var digits = p.replace(/\D/g, "");
@@ -121,8 +151,6 @@ $(function() {
 //     var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
 //     console.log(phoneRe.test(this.value))
 // })
-
-
 
 // var my_button = document.getElementById("my_button");
 // console.log(my_button);
@@ -193,4 +221,3 @@ $(function() {
 // phone_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
 // // console.log(phone_number);
 // });
-
