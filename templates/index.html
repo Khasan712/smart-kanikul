@@ -7,8 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="description" content="Smart kanikul - Farzandingiz uchun yozgi IT lager, tel:+998 90 203 88 00">
+    <meta name="keywords" content="smart kanikul kurslari, bolalar uchun yozgi it lager">
+    <meta name="google-site-verification" content="BUk4jqc0M4WGzpouZL__idnkoaqxdxq9da743iCdMfU" />
+
     <link rel="shortcut icon" href="{% static 'images/fintech.jpg' %}" type="image/x-icon">
-    <title>smart-kanikul.uz </title>
+    <title>Smart kanikul - Bolalar uchun yozgi IT lage</title>
     <link rel="stylesheet" href="{% static 'Libs/js/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'Libs/js/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
@@ -17,6 +21,31 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'Libs/css/bootstrap-grid.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVX674849W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XVX674849W');
+    </script>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '946398489737603');
+        fbq('track', 'PageView');
+    </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=946398489737603&ev=PageView&noscript=1"
+        />
+    </noscript>
+    <meta name="facebook-domain-verification" content="ekio71qwgbopp5r974jklk53cdpexq" />
 </head>
 
 <body>
@@ -92,7 +121,7 @@
                     <img src="{% static 'images/02.jpg' %}" alt="kanikul">
                     <div class="container">
                         <div class="text">
-                            <h2><span>Smart kanikul </span> - билан фарзандигиз дастурлашда ўз ёълини топишига эришинг!
+                            <h2><span>Smart kanikul </span> - билан фарзандигиз дастурлашда ўз йўлини топишига эришинг!
                             </h2>
                             <button class="bgBlue call registerBtn">Курсга ёзилиш </button>
                         </div>
@@ -102,7 +131,7 @@
                     <img src="{% static 'images/01.jpg' %}" alt="kanikul">
                     <div class="container">
                         <div class="text">
-                            <h2><span>Smart kanikul </span> - билан фарзандигизни инноватион болага айлантиринг! </h2>
+                            <h2><span>Smart kanikul </span> - билан фарзандигизни инновацион болага айлантиринг! </h2>
                             <button class="bgBlue call registerBtn">Курсга ёзилиш</button>
                         </div>
                     </div>
@@ -144,17 +173,17 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-                        <span>Fintechhub компанияси</span> — замонавий касблар ҳисобланувчи дастурлашнинг турли хил ёъналишларида,
+                        <span>Fintechhub компанияси</span> — замонавий касблар ҳисобланувчи дастурлашнинг турли хил йўналишларида,
                         ўқувчиларга сифатли таълим бериш билан шуғулланади. Ва шу билан чекланмаган ҳолда дастурлар ишлаб
                         чиқариш билан ўз фаолиятини олиб боради.
                         <br>
                         <br>
                     </p>
-                    <p> <span>Smart-Kanikul курси</span> — болалар учун мўлжалланган ўқув курси ҳисобланади. Бунда болалар ҳозирги
-                        кундаги энг замонавий билимларга эга бўлишади. Курс давомида болалар ёзги татил вақтини
+                    <h1> <span>Smart-Kanikul курси</span> — болалар учун мўлжалланган ўқув курси ҳисобланади. Бунда болалар ҳозирги
+                        кундаги энг замонавий билимларга эга бўлишади. Курс давомида болалар ёзги таътил вақтини
                         унумли ўтказиши ҳамда замонавий касбларни тажрибали
-                        менторлар билан ўрганиши таминланади.
-                    </p>
+                        менторлардан ўрганишади.
+                    </h1>
                 </div>
             </div>
         </div>
@@ -171,9 +200,8 @@
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                             <div class="cards">
                                 <h3><span>01</span> Front-End</h3>
-                                <p>Бу Web дастурлашниниг ёъналиши бўлиб , Web сайтларнинг ташқи кўриниши
-                                    яратишни ўрганасиз. Бунда фарзандигиз шахсий сайитингиз ишлаб чиқишингиз
-                                    мумкин бўлади
+                                <p>Бу Веб дастурлашниниг йўналиши бўлиб , веб сайтларнинг ташқи кўриниши
+                                    яратишни ўрганасиз. Бунда фарзандигиз шахсий сайитини ишлаб чиқиш имкониятига эга бўлади.                                 мумкин бўлади
                                 </p>
 
                             </div>
@@ -190,8 +218,8 @@
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                             <div class="cards">
                                 <h3><span>02</span> Back-End</h3>
-                                <p>Web сайтларнинг ички қисми ҳисобланади. Бунда фарзандигиз Telegram bot ва ChatGPT ва
-                                    Midjourney суний интеллект ботларидан фойдаланишни ўрганасиз</p>
+                                <p>Веб сайтларнинг ички қисми ҳисобланади. Бунда фарзандигиз Telegram bot ва ChatGPT ва
+                                    Midjourney суний интеллект ботларидан фойдаланишни ўрганади.</p>
 
                             </div>
                         </div>
@@ -212,7 +240,7 @@
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                             <div class="cards">
                                 <h3><span>03</span> Mobile Flutter</h3>
-                                <p>Бунда фарзандигиз Mobile иловалар қандай қилиб яратилишини ўрганади.</p>
+                                <p>Бунда фарзандингиз Mobile иловалар қандай қилиб яратилишини ўрганади.</p>
 
                             </div>
                         </div>
@@ -227,9 +255,9 @@
                         </div>
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                             <div class="cards">
-                                <h3><span>04</span> Kitob taqdimoti</h3>
-                                <p>Фарзандигиз ўз қизиқишога оид бўлган китобларни ўқиб , дўстлари орасида
-                                    тақдимотини қилиб бериш имкониятига эга бўлади.</p>
+                                <h3><span>04</span> Kитоб тақдимоти</h3>
+                                <p>фарзандингиз ўз қизиқишига оид бўлган китобларни ўқиб, дўстлари орасида
+                                    тақдимот қилиб бериш имкониятига эга бўлади.</p>
                             </div>
                         </div>
 
@@ -241,7 +269,7 @@
                             <div class="cards">
                                 <h3><span>05</span> Инттеллектуал ва Спорт ўйинлари</h3>
                                 <p>Фарзандингиз дарсдан бўш бўлган вақтларда интеллектуал ўйинлар орқали вақтини
-                                    унуммли ўтказиши мумкин.</p>
+                                    унумли ўтказиши мумкин.</p>
 
                             </div>
                         </div>
@@ -257,7 +285,7 @@
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                             <div class="cards">
                                 <h3><span>06</span>Master-class </h3>
-                                <p>Фарзандигиз турли хил соҳада етук мутахасисслар томонидан ташкил қилинадиган
+                                <p>Фарзандингиз турли хил соҳада йетук мутахасисслар томонидан ташкил қилинадиган
                                     Master-class ларда қатнашиш имкониятига эга бўлади.</p>
 
                             </div>
@@ -320,7 +348,7 @@
             <div class="cards">
                 <img src="{% static 'images/mentorAbdullo.png' %}" alt="">
                 <div class="textCard">
-                    <h2>Абдулло Фозилжонов</h2>
+                    <h2>Абдуллох Фозилжонов</h2>
                     <p>Mobile Flutter developer</p>
                 </div>
             </div>
@@ -342,7 +370,7 @@
             <div class="cards">
                 <img src="{% static 'images/mentorBegzod.png' %}" alt="">
                 <div class="textCard">
-                    <h2>Бегозд Гайратов</h2>
+                    <h2>Бегзод Гайратов</h2>
                     <p>Mobile Flutter developer</p>
                 </div>
             </div>
@@ -353,13 +381,13 @@
 
     <section id="benifits" class="benifits" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
         <div class="container">
-            <h3 class="title">&lt;Smart kanikul kursining afzalliklari?/&gt;</h3>
+            <h3 class="title">&lt;Smart kanikul курсининг афзалликлари?/&gt;</h3>
 
             <div class="row justify-content-between">
                 <div class="col-lg-8">
 
                     <h4>
-                        Smart-kanikul махсус болалар учун ишлаб чиқилган бўлиб, ёзги таътилда вақтини унумли
+                        Smart-kanikul болалар ёзги таътилда вақтини унумли
                         ўтказиб, <span> Дастурлашни</span> ўрганиш учун хизмат қилади. Дарслар <span>амалий</span>
                         ва <span>назарий</span> билимларни ўз ичига
                         олади.
@@ -373,7 +401,7 @@
                             <path
                                 d="m17.994 2.286a9 9 0 0 0 -14.919 5.536 8.938 8.938 0 0 0 2.793 7.761 6.263 6.263 0 0 1 2.132 4.566v.161a3.694 3.694 0 0 0 3.69 3.69h.62a3.694 3.694 0 0 0 3.69-3.69v-.549a5.323 5.323 0 0 1 1.932-4 8.994 8.994 0 0 0 .062-13.477zm-5.684 19.714h-.62a1.692 1.692 0 0 1 -1.69-1.69s-.007-.26-.008-.31h4.008v.31a1.692 1.692 0 0 1 -1.69 1.69zm4.3-7.741a7.667 7.667 0 0 0 -2.364 3.741h-1.246v-7.184a3 3 0 0 0 2-2.816 1 1 0 0 0 -2 0 1 1 0 0 1 -2 0 1 1 0 0 0 -2 0 3 3 0 0 0 2 2.816v7.184h-1.322a8.634 8.634 0 0 0 -2.448-3.881 7 7 0 0 1 3.951-12.073 7.452 7.452 0 0 1 .828-.046 6.921 6.921 0 0 1 4.652 1.778 6.993 6.993 0 0 1 -.048 10.481z" />
                         </svg>
-                        <p>Дастурлашнинг энг замонавий турларини ўрганасиз.</p>
+                        <p>Дастурлашнинг замонавий турларини ўрганасиз.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -433,7 +461,7 @@
             <div class="row mt-50">
                 <div class="col-12 col-lg-4 col-md-12 col-sm-12">
                     <div class="price-box-title">
-                        <p><span>Smart-kanikul</span> Курсининг нархи <strong>15 mln </strong> сўмни ташкил қилади.</p>
+                        <p><span>Smart-kanikul</span> Курсининг нархи <strong>15 млн </strong> сўмни ташкил қилади.</p>
                         <span class="sale">Агар</span>
                     </div>
                 </div>
@@ -444,7 +472,7 @@
                                 01 | Чегирма
                             </div>
                             <div class="price-box-text">
-                                <p>Курс нархини олдиндан тўласангиз, <span>5 mln</span> сўм Чегирма</p>
+                                <p>Курс нархини олдиндан тўласангиз, <span>5 млн</span> сўм Чегирма</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-12 price-box">
@@ -460,7 +488,7 @@
                                 03 | Чегирма
                              </div>
                              <div class="price-box-text">
-                                 <p>Fintechhub ўқувчиларига <span>5 mln</span> сўм чегирма.</p>
+                                 <p>Fintechhub ўқувчиларига <span>5 млн</span> сўм чегирма.</p>
                              </div>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-12 price-box">
@@ -468,17 +496,17 @@
                                 04 | Чегирма
                                    </div>
                                    <div class="price-box-text">
-                                       <p>1-июнгача <span>5 mln</span> сўм чегирма</p>
+                                       <p>1-июнгача <span>5 млн</span> сўм чегирма</p>
                                    </div>
                         </div>
-                        <div class="col-12 price-box">
+                        <!-- <div class="col-12 price-box">
                             <div class="check-icon">
                                 05 | Чегирма
                                </div>
                                <div class="price-box-text">
-                                   <p>Fintechhub нинг ҳамкорлари номидан келсангиз <span>5 mln</span> сўм чегирмага</p>
+                                   <p>Fintechhub нинг ҳамкорлари номидан келсангиз <span>5 млн</span> сўм чегирмага</p>
                                </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -500,7 +528,7 @@
                             <button id="my_button" class="bgBlue">Рўйҳатдан ўтиш </button>
                         </form> -->
                         <form id="my-form" name="myForm"  method="post">{% csrf_token %}
-                            <input    type="text" id="name" name="name" placeholder="Ismingzini kiriting" required>
+                            <input    type="text" id="name" name="name" placeholder="Исмингзини киритинг" required>
                             <input required
                             minlength="12"
                                  maxlength="13"

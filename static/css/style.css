@@ -207,13 +207,16 @@ main {
   margin-top: 100px;
 }
 
-main p {
+main p , main h1{
   font-size: 16px;
   line-height: 30px;
   text-indent: 30px;
 }
+main h1{
+  font-weight: 400;
+}
 
-main p span {
+main p span , main h1 span {
   font-weight: 700;
   font-size: 18px;
 }
@@ -700,7 +703,8 @@ footer nav ul li a:hover {
 
 .price .price-box span {
   color: red;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 * {
@@ -1039,6 +1043,7 @@ h3.title {
     -ms-flex-align: center;
     align-items: center;
     padding-top: 100px;
+    background-color: black;
   }
 
   header .navbar ul li {
